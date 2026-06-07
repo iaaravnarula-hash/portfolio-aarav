@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aarav Narula's hackathon and competition record — NASA, Intel, DWPS, Samsung SFT 2026. Full results, dates, and project details." />
+  <title>Competition Record — Aarav Narula</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/competitions.css" />
+
+  <!-- GSAP + SplitType (for hero title animation) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div id="progress" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════ -->
+<nav id="nav">
+  <a class="nav-logo" href="index.html">AARAV<br>NARULA</a>
+  <div class="nav-r">
+    <a class="btn" href="index.html">← PORTFOLIO</a>
+    <a class="btn btn-a" href="mailto:aarav13.narula@gmail.com?subject=Let%27s%20Build%20Something">HIRE ME</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO — COMPETITION CALENDAR HERO
+══════════════════════════════════════════════ -->
+<section id="cal-hero">
+  <div class="cal-grid-bg" aria-hidden="true"></div>
+  <div class="cal-glow" aria-hidden="true"></div>
+
+  <!-- NEXT EVENT card — top right, like LN's "NEXT RACE" -->
+  <div class="cal-next">
+    <div class="cal-next-badge">NEXT EVENT</div>
+    <div class="cal-next-name">Samsung Solve<br>For Tomorrow</div>
+    <div class="cal-next-date">July 2026 · National India</div>
+    <div class="cal-next-tags">
+      <span class="cal-next-tag">AI Bionic Arm</span>
+      <span class="cal-next-tag">Hardware</span>
+      <span class="cal-next-tag">Healthcare</span>
+      <span class="cal-next-tag">IIT Delhi Target</span>
+    </div>
+  </div>
+
+  <!-- Season label -->
+  <div class="cal-season">2024–2026 COMPETITION RECORD</div>
+
+  <!-- Big impact title -->
+  <h1 class="cal-title">
+    HACKATHON<br>
+    <span class="accent">RECORD</span>
+  </h1>
+
+  <!-- Bottom row: pills + description -->
+  <div class="cal-hero-bottom">
+    <div class="cal-pills">
+      <div class="cal-pill">
+        <span class="cal-pill-n">6</span>
+        <span class="cal-pill-l">Competed</span>
+      </div>
+      <div class="cal-pill">
+        <span class="cal-pill-n">3</span>
+        <span class="cal-pill-l">Podiums</span>
+      </div>
+      <div class="cal-pill">
+        <span class="cal-pill-n">2</span>
+        <span class="cal-pill-l">Ongoing</span>
+      </div>
+      <div class="cal-pill">
+        <span class="cal-pill-n">14</span>
+        <span class="cal-pill-l">Years Old</span>
+      </div>
+    </div>
+    <p style="font-family:var(--fm);font-size:11px;color:rgba(236,233,227,.35);text-transform:uppercase;letter-spacing:.08em;max-width:300px;line-height:1.8;">
+      Competing since 2024 against adult developers,<br>
+      university students, and global teams.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CALENDAR TABLE (like LN race schedule)
+══════════════════════════════════════════════ -->
+<section id="calendar">
+
+  <!-- Table header -->
+  <div class="cal-table-head" aria-hidden="true">
+    <span>#</span>
+    <span></span>
+    <span>EVENT</span>
+    <span>DATE</span>
+    <span>CATEGORY</span>
+    <span style="text-align:right">RESULT</span>
+    <span></span>
+  </div>
+
+  <!-- Rows rendered by JS -->
+  <div id="cal-tbody"></div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════
+     RECORDS SECTION (3 stat cards)
+══════════════════════════════════════════════ -->
+<section id="records">
+  <div class="rec-eyebrow">CAREER HIGHLIGHTS</div>
+
+  <div class="rec-grid">
+
+    <div class="rec-card">
+      <span class="rec-n" data-count="1">0</span>
+      <div class="rec-l">Best Placement</div>
+      <div class="rec-sub">1st Place — DWPS Mindsphere<br>Regional Winner, Chandigarh</div>
+    </div>
+
+    <div class="rec-card">
+      <span class="rec-n" data-count="6">0</span>
+      <div class="rec-l">Global Competitions</div>
+      <div class="rec-sub">NASA · Intel · Google · Samsung<br>DWPS · St. Soldier's</div>
+    </div>
+
+    <div class="rec-card">
+      <span class="rec-n">14</span>
+      <div class="rec-l">Age When Competing</div>
+      <div class="rec-sub">Against adult developers<br>and university students worldwide</div>
+    </div>
+
+  </div>
+
+  <!-- Org logos row (text-based) -->
+  <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:center;border-top:1px solid rgba(236,233,227,.06);padding-top:40px;">
+    <div style="text-align:center;">
+      <div style="font-family:var(--fd);font-weight:800;font-size:1.4rem;color:rgba(236,233,227,.2);text-transform:uppercase;letter-spacing:.04em;">NASA</div>
+      <div style="font-family:var(--fm);font-size:9px;color:rgba(236,233,227,.2);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;">Space Apps</div>
+    </div>
+    <div style="width:1px;height:40px;background:rgba(236,233,227,.08);"></div>
+    <div style="text-align:center;">
+      <div style="font-family:var(--fd);font-weight:800;font-size:1.4rem;color:rgba(236,233,227,.2);text-transform:uppercase;letter-spacing:.04em;">INTEL</div>
+      <div style="font-family:var(--fm);font-size:9px;color:rgba(236,233,227,.2);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;">Ctrl+Alt</div>
+    </div>
+    <div style="width:1px;height:40px;background:rgba(236,233,227,.08);"></div>
+    <div style="text-align:center;">
+      <div style="font-family:var(--fd);font-weight:800;font-size:1.4rem;color:rgba(236,233,227,.2);text-transform:uppercase;letter-spacing:.04em;">GOOGLE</div>
+      <div style="font-family:var(--fm);font-size:9px;color:rgba(236,233,227,.2);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;">Gemma 4 Good</div>
+    </div>
+    <div style="width:1px;height:40px;background:rgba(236,233,227,.08);"></div>
+    <div style="text-align:center;">
+      <div style="font-family:var(--fd);font-weight:800;font-size:1.4rem;color:rgba(236,233,227,.2);text-transform:uppercase;letter-spacing:.04em;">SAMSUNG</div>
+      <div style="font-family:var(--fm);font-size:9px;color:rgba(236,233,227,.2);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;">Solve For Tomorrow</div>
+    </div>
+    <div style="width:1px;height:40px;background:rgba(236,233,227,.08);"></div>
+    <div style="text-align:center;">
+      <div style="font-family:var(--fd);font-weight:800;font-size:1.4rem;color:rgba(236,233,227,.2);text-transform:uppercase;letter-spacing:.04em;">IIT DELHI</div>
+      <div style="font-family:var(--fm);font-size:9px;color:rgba(236,233,227,.2);text-transform:uppercase;letter-spacing:.1em;margin-top:4px;">FITT Target</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer>
+  <span>© 2025 Aarav Narula — Chandigarh, India</span>
+  <a href="index.html">← Back to Portfolio</a>
+  <span style="color:rgba(236,233,227,.15);">AARAV NARULA · DEV · BUILDER · AGE 14</span>
+</footer>
+
+<!-- Competitions JS -->
+<script src="js/competitions.js"></script>
+
+</body>
+</html>

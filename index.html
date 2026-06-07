@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aarav Narula — 14-year-old developer from Chandigarh. NASA nominee, Intel recognized. AI tools, full-stack platforms, hardware prototypes." />
+  <title>Aarav Narula — Developer Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- CDN Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/split-type@0.3.4/umd/index.min.js"></script>
+</head>
+<body>
+
+<!-- ── FIXED CHROME ─────────────────────── -->
+<canvas id="particles" aria-hidden="true"></canvas>
+<div id="progress" aria-hidden="true"></div>
+<div class="flash" id="flash" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="konami" aria-hidden="true"><p>ADMIN MODE UNLOCKED ⚡</p></div>
+<div id="tl-tip" aria-hidden="true"></div>
+
+<!-- ── NAV ─────────────────────────────── -->
+<nav id="nav" class="lt">
+  <a class="nav-logo" href="#hero">AARAV<br>NARULA</a>
+  <div class="nav-r">
+    <a class="btn btn-a" href="mailto:aarav13.narula@gmail.com?subject=Let%27s%20Build%20Something">HIRE ME</a>
+    <button class="btn-menu" id="menu-open" aria-label="Open navigation menu">&#8212;</button>
+  </div>
+</nav>
+
+<!-- ── FULLSCREEN MENU ─────────────────── -->
+<div id="menu" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="menu-close" id="menu-close">ESC / CLOSE</button>
+  <div class="menu-inner">
+    <div class="menu-items" id="menu-items"></div>
+    <div class="menu-bot">
+      <div class="m-socials">
+        <a href="#" data-gh>GitHub</a>
+        <a href="#" data-li>LinkedIn</a>
+        <a href="mailto:aarav13.narula@gmail.com">Email</a>
+      </div>
+      <span>ESC to close</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     HERO — FULLSCREEN LANDO-STYLE
+══════════════════════════════════════ -->
+<section id="hero" data-theme="light">
+  <div class="h-topo" aria-hidden="true"></div>
+  <div class="h-blob a" aria-hidden="true"></div>
+  <div class="h-blob b" aria-hidden="true"></div>
+  <div class="h-mono" aria-hidden="true">AN</div>
+  <div class="h-ghost" aria-hidden="true">AARAV<br>NARULA</div>
+
+  <!-- Base photo — white bg multiplies with cream hero = no checkerboard -->
+  <div class="h-photo-wrap" id="photo-area">
+    <img src="photo.jpg" alt="Aarav Narula" />
+  </div>
+
+  <!-- Canvas trail — cursor ink-blobs reveal VR composite (photo-vr.png) -->
+  <canvas id="vr-trail" aria-hidden="true"></canvas>
+
+  <!-- Competition card — bottom-left like LN's "Next Race" -->
+  <a class="h-comp-card" href="competitions.html" id="comp-card">
+    <div class="h-comp-top">
+      <div class="h-comp-label">COMPETITION RECORD</div>
+      <div class="h-comp-event">HACKATHON<br>RECORD</div>
+      <div class="h-comp-date">NASA · INTEL · DWPS · IIT DELHI</div>
+    </div>
+    <div class="h-comp-stats">
+      <div class="h-cs"><span class="h-cs-n">6</span><span class="h-cs-l">Entered</span></div>
+      <div class="h-cs"><span class="h-cs-n">3</span><span class="h-cs-l">Podiums</span></div>
+      <div class="h-cs"><span class="h-cs-n">2</span><span class="h-cs-l">Ongoing</span></div>
+    </div>
+    <div class="h-comp-cta">VIEW FULL RECORD</div>
+  </a>
+
+  <!-- Scroll indicator bottom-right -->
+  <div class="h-scroll">
+    <span class="h-scroll-txt">SCROLL</span>
+    <div class="h-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+  WIDGET 1 — IDENTITY MARQUEE BAND
+  Full-width dark ticker — like LN's
+  championship ribbon that rolls forever.
+══════════════════════════════════════ -->
+<div class="w-band" id="id-band" aria-hidden="true">
+  <div class="band-track" id="band-track">
+    <span>&#9654; AARAV NARULA</span><span class="band-dot">&#9679;</span>
+    <span>14 YEARS OLD</span><span class="band-dot">&#9679;</span>
+    <span>CHANDIGARH, INDIA</span><span class="band-dot">&#9679;</span>
+    <span>6 HACKATHONS</span><span class="band-dot">&#9679;</span>
+    <span>NASA &#183; INTEL &#183; GOOGLE &#183; SAMSUNG</span><span class="band-dot">&#9679;</span>
+    <span>CLASS X BUILDER</span><span class="band-dot">&#9679;</span>
+    <span>&#9654; AARAV NARULA</span><span class="band-dot">&#9679;</span>
+    <span>14 YEARS OLD</span><span class="band-dot">&#9679;</span>
+    <span>CHANDIGARH, INDIA</span><span class="band-dot">&#9679;</span>
+    <span>6 HACKATHONS</span><span class="band-dot">&#9679;</span>
+    <span>NASA &#183; INTEL &#183; GOOGLE &#183; SAMSUNG</span><span class="band-dot">&#9679;</span>
+    <span>CLASS X BUILDER</span><span class="band-dot">&#9679;</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     STATEMENT
+══════════════════════════════════════ -->
+<section id="statement" data-theme="dark">
+  <div class="eyebrow">&#8212; AARAV NARULA, CHANDIGARH</div>
+  <div id="stmt-txt">
+    BUILDING REAL TOOLS.<br>
+    SHIPPING <span class="accent">AI</span> THAT WORKS.<br>
+    COMPETING AT <span class="accent">14</span>.<br>
+    DEFINING A NEW KIND<br>
+    <span class="accent serif">of developer.</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     ABOUT
+══════════════════════════════════════ -->
+<section class="light pad" id="about" data-theme="light">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sh ru">
+      <h2>ABOUT</h2>
+      <span class="meta">CLASS 10 BUILDER</span>
+    </div>
+    <div class="about-grid">
+      <div class="bio rl" id="bio-copy"></div>
+      <div class="rr" id="sk-list"></div>
+    </div>
+    <div class="about-cards ru" id="about-cards"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     SKILLS
+══════════════════════════════════════ -->
+<section class="dark pad" id="skills" data-theme="dark">
+  <div class="wrap">
+    <div class="sh ru"><h2>SKILLS</h2><span class="meta">STACK + EDGE</span></div>
+    <div class="skills-grid">
+      <div class="rl">
+        <div class="cube-scene">
+          <div class="cube">
+            <div class="cf">AI</div>
+            <div class="cf">PHP</div>
+            <div class="cf">Python</div>
+            <div class="cf">Flutter</div>
+            <div class="cf">Vibe</div>
+            <div class="cf">Prompt</div>
+          </div>
+        </div>
+        <div class="tags" id="tech-tags"></div>
+      </div>
+      <article class="edge-card rr">
+        <div class="lbl">WHY I WIN</div>
+        <h2>The Vibe<br>Coder's Edge</h2>
+        <p>While others spend days on boilerplate, I ship. My 95% prompt engineering skill and near-perfect vibe coding means I iterate faster than teams 10&times; my size. I've competed against adult developers and placed. At 14. From Class 10.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+  WIDGET 2 — IMMERSIVE STAT BAR
+  4 giant numbers that count up on scroll —
+  like LN's World Championship standings.
+══════════════════════════════════════ -->
+<div class="w-statbar" id="stat-bar">
+  <div class="sb-item">
+    <div class="sb-n" data-count="14">0</div>
+    <div class="sb-l">Years<br>Old</div>
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-item">
+    <div class="sb-n" data-count="6">0</div>
+    <div class="sb-l">Competitions<br>Entered</div>
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-item">
+    <div class="sb-n" data-count="3">0</div>
+    <div class="sb-l">Podium<br>Finishes</div>
+  </div>
+  <div class="sb-div"></div>
+  <div class="sb-item">
+    <div class="sb-n" data-count="12">0</div>
+    <div class="sb-l">Projects<br>Shipped</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PROJECTS
+══════════════════════════════════════ -->
+<section class="dark pad" id="projects" data-theme="dark">
+  <div class="wrap">
+    <div class="sh ru"><h2>PROJECTS</h2><span class="meta">06 LIVE</span></div>
+    <div class="proj-grid" id="proj-grid"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     WINS / ACHIEVEMENTS
+══════════════════════════════════════ -->
+<section class="light pad" id="wins" data-theme="light">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sh ru"><h2>WINS</h2><span class="meta">HACKATHONS + RECOGNITION</span></div>
+    <div class="ach-grid" id="ach-grid"></div>
+    <div class="stats" id="stats"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     VIBE CODING
+══════════════════════════════════════ -->
+<section class="dark pad" id="vibe" data-theme="dark">
+  <div class="wrap">
+    <div class="sh ru"><h2>VIBE CODING</h2><span class="meta">PROMPT &#8594; PRODUCTION</span></div>
+    <div class="terminal rsc">
+      <div class="term-top">
+        <span class="td r"></span><span class="td y"></span><span class="td g"></span>
+        <span class="term-path">~/aarav/vibe-terminal &#8212; aarav@chandigarh</span>
+      </div>
+      <div class="terminal-body" id="term-body"></div>
+    </div>
+    <div class="vibe-cards" id="vibe-cards"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TIMELINE / HACKATHON RECORD
+══════════════════════════════════════ -->
+<section class="dark pad" id="timeline" data-theme="dark">
+  <div class="wrap">
+    <div class="tl-intro ru">
+      <h2>HACKATHON<br>RECORD</h2>
+      <p>Major competitions, real products, adult-level pressure &#8212; and a habit of turning ambitious ideas into working demos under deadline.</p>
+      <div class="mini">
+        <span><strong>6</strong>Entered</span>
+        <span><strong>3</strong>Podiums</span>
+        <span><strong>2</strong>Ongoing</span>
+      </div>
+    </div>
+    <div class="tl-tbl" id="tl-tbl"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     DASHBOARD
+══════════════════════════════════════ -->
+<section class="dark pad" id="dashboard" data-theme="dark">
+  <div class="wrap">
+    <div class="sh ru"><h2>DASHBOARD</h2><span class="meta">LIVE WIDGETS</span></div>
+    <div class="dash-grid">
+
+      <div class="w">
+        <span class="wl">LIVE CLOCK &#8212; IST</span>
+        <div class="wv" id="live-clock">--:--:--</div>
+      </div>
+
+      <div class="w">
+        <span class="wl">LIVE WEATHER &middot; CHANDIGARH</span>
+        <div class="wv" id="w-temp">&#8212;&#176;C</div>
+        <div id="w-desc" style="font-family:var(--fm);font-size:11px;opacity:.4;text-transform:uppercase;margin-top:4px">Loading&#8230;</div>
+      </div>
+
+      <div class="w">
+        <span class="wl">VISITOR COUNTER</span>
+        <div class="wv" id="visitor">&#8212;</div>
+      </div>
+
+      <div class="w">
+        <span class="wl">MUSIC VISUALIZER</span>
+        <div class="viz">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="w wide">
+        <span class="wl"><i class="pd"></i>CURRENTLY BUILDING</span>
+        <h3>AI Bionic Arm</h3>
+        <p style="color:rgba(236,233,227,.5);font-size:14px">Samsung SFT 2026 &middot; July Deadline</p>
+        <div class="wp"><span id="build-bar"></span></div>
+      </div>
+
+      <div class="w wide">
+        <span class="wl">STACK HEARTBEAT</span>
+        <div class="ticker">
+          <div class="ticker-inner" id="stack-ticker"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CONTACT
+══════════════════════════════════════ -->
+<section class="light pad" id="contact" data-theme="light">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="rl">
+        <div style="font-family:var(--fm);font-size:12px;opacity:.45;letter-spacing:.15em;margin-bottom:6px">&#8212; GET IN TOUCH</div>
+        <h2 class="ct-h">LET'S <span class="serif">build</span> SOMETHING <span class="accent">EPIC.</span></h2>
+      </div>
+      <div class="rr">
+        <div class="info-list" id="contact-info"></div>
+        <div class="cta-card">
+          <h3>READY TO BUILD TOGETHER?</h3>
+          <p>I'm a 14-year-old developer who ships real products. If you have a problem worth solving, I'm interested.</p>
+          <a class="btn btn-a" href="mailto:aarav13.narula@gmail.com?subject=Let%27s%20Build%20Something">SEND A MESSAGE &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer id="footer" data-theme="dark">
+  <div class="footer-top">
+    <div class="footer-logo">AARAV<br>NARULA</div>
+    <div class="footer-links">
+      <a href="#" data-gh>GitHub</a>
+      <a href="#" data-li>LinkedIn</a>
+      <a href="mailto:aarav13.narula@gmail.com">Email</a>
+      <a href="#" data-ig>Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2026 Aarav Narula. All rights reserved.</span>
+    <span class="footer-sig">Aarav</span>
+    <span>Built with Vibe Coding &#9889;</span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     PERSISTENT UI
+══════════════════════════════════════ -->
+<div class="hud" id="hud-clk">IST &middot; --:--:--</div>
+<button class="theme-btn" title="Toggle theme" aria-label="Toggle theme">&#9680;</button>
+
+<!-- ══════════════════════════════════════
+     COMMAND PALETTE (Cmd+K)
+══════════════════════════════════════ -->
+<div id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="pal-box">
+    <input class="pal-input" id="pal-input" type="text" placeholder="Type a command or search&#8230;" autocomplete="off" aria-label="Command input" />
+    <div class="cmd-list" id="cmd-list"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     LOGIN
+══════════════════════════════════════ -->
+<div id="login" role="dialog" aria-modal="true" aria-label="Admin login">
+  <button class="login-x" id="login-x" aria-label="Close login">&#10005;</button>
+  <div class="login-box" id="login-box">
+    <div class="tiny">&#8212; RESTRICTED ACCESS</div>
+    <h2>ADMIN<br>LOGIN</h2>
+    <input class="login-inp" type="password" id="login-pw" placeholder="Password" autocomplete="current-password" />
+    <button class="btn btn-a" id="login-btn" style="width:100%;justify-content:center">UNLOCK ADMIN &#8594;</button>
+    <div class="login-err" id="login-err"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     ADMIN PANEL — Full Content Manager
+══════════════════════════════════════ -->
+<div id="admin" role="dialog" aria-modal="true" aria-label="Admin panel">
+  <div class="adm-hdr">
+    <h2>&#9881; ADMIN PANEL</h2>
+    <div class="adm-acts">
+      <button class="btn" id="adm-export">EXPORT JSON</button>
+      <label class="btn" for="adm-import" style="display:inline-flex;align-items:center;min-height:42px;padding:0 18px;cursor:pointer;border:1px solid currentColor;font-family:var(--fm);font-size:12px;text-transform:uppercase;letter-spacing:.1em">IMPORT JSON</label>
+      <input id="adm-import" type="file" accept="application/json" hidden />
+      <button class="btn" id="adm-reset" style="border-color:#FF5F57;color:#FF5F57">RESET ALL</button>
+      <button class="btn" id="adm-logout">LOGOUT</button>
+      <button class="btn" id="adm-close" aria-label="Close admin">&#10005;</button>
+      <button class="btn btn-a" id="adm-save">SAVE &#8594;</button>
+    </div>
+  </div>
+  <div class="adm-body">
+    <aside class="adm-nav" id="adm-nav"></aside>
+    <div class="adm-main" id="adm-main"></div>
+  </div>
+</div>
+
+<!-- Main JS -->
+<script src="js/main.js"></script>
+<script>window.addEventListener('load',()=>{ if(typeof lenis!=='undefined') window.lenis=lenis; });</script>
+
+</body>
+</html>
